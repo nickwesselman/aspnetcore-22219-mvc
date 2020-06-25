@@ -1,0 +1,9 @@
+<Project>
+  <!-- Workaround for dotnet watch with MVC and Referenced SDK Project -->
+  <Target Name="RazorWatch" BeforeTargets="_CoreCollectWatchItems">
+    <ItemGroup>
+      <RazorWatch Include="**\*.cshtml" />
+      <Watch Include="%(RazorWatch.FullPath)" />
+    </ItemGroup>
+  </Target>
+</Project>
